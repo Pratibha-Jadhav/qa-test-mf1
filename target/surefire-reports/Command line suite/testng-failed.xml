@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="0" name="Failed suite [Command line suite]">
+  <test thread-count="5" verbose="0" name="Command line test(failed)">
+    <classes>
+      <class name="org.naic.mfl.se.challenge.SignInTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="signInTest"/>
+        </methods>
+      </class> <!-- org.naic.mfl.se.challenge.SignInTest -->
+      <class name="org.naic.mfl.se.challenge.WebTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="signInTest"/>
+          <include name="checkoutTest"/>
+          <include name="logInTest"/>
+        </methods>
+      </class> <!-- org.naic.mfl.se.challenge.WebTest -->
+      <class name="org.naic.mfl.se.challenge.LoginTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="chekForUser"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- org.naic.mfl.se.challenge.LoginTest -->
+    </classes>
+  </test> <!-- Command line test(failed) -->
+</suite> <!-- Failed suite [Command line suite] -->

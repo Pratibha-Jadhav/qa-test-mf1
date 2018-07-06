@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 1, Errors: 0, Skipped: 10, Time elapsed: 18.702 sec <<< FAILURE!
+setUp(org.naic.mfl.se.challenge.ChekOutTest)  Time elapsed: 17.526 sec  <<< FAILURE!
+java.lang.ClassCastException: org.openqa.selenium.remote.RemoteWebDriver$RemoteWebDriverOptions$RemoteTimeouts cannot be cast to org.openqa.selenium.support.ui.WebDriverWait
+	at utility.BrowserFactory.start_Browser(BrowserFactory.java:35)
+	at org.naic.mfl.se.challenge.ChekOutTest.setUp(ChekOutTest.java:21)
+
