@@ -2,14 +2,25 @@ package org.naic.mfl.se.challenge;
 
 import static org.testng.Assert.assertTrue;
 
+import org.naic.mfl.se.JavaClass.CheckOutPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import utility.PageConstant;
 import utility.WaitUtility;
 
 public class ChekOutTest extends BaseTest {
+
+	CheckOutPage checkOutPage;
+	
+	@BeforeTest
+	public void setUp() {
+		super.setUp();
+		checkOutPage = PageFactory.initElements(driver, CheckOutPage.class);
+	}
 
 	@Test
 	public void checkoutTest() {
@@ -29,8 +40,7 @@ public class ChekOutTest extends BaseTest {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id(PageConstant.Uniform_CGV))).click();
 		checkOutPage.processCarrier.click();
 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.className(PageConstant.Bankwire))).click();
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PageConstant.Cart_Navigation)))
-				.click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PageConstant.Cart_Navigation))).click();
 		WaitUtility.checkHeaderText(driver, 5, PageConstant.Order_Confirmation);
 		assertTrue(checkOutPage.ord1.isDisplayed());
 		assertTrue(checkOutPage.ord2.isDisplayed());

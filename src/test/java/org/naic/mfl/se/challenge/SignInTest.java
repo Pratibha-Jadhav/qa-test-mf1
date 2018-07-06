@@ -4,20 +4,23 @@ import java.util.Date;
 
 import org.naic.mfl.se.JavaClass.SignInPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import utility.AssertCom;
-import utility.BrowserFactory;
 import utility.WaitUtility;
 
 public class SignInTest extends BaseTest {
+	SignInPage signInPage;
+	
+	@BeforeTest
+	public void setUp() {
+		super.setUp();
+		signInPage = PageFactory.initElements(driver, SignInPage.class);
+	}
 
 	@Test
 	public void signInTest() {
